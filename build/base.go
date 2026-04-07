@@ -329,10 +329,6 @@ func doTest(ref string, testsDir string, browserName string, browserVersion stri
 	}
 
 	seleniumUrl := "http://localhost:4445/"
-	if browserName == "firefox" || (browserName == "opera" && browserVersion == "12.16") {
-		seleniumUrl = "http://localhost:4445/wd/hub"
-	}
-
 	exec.Command("docker", "rm", "-f", "selenium").Output()
 	defer func() {
 		exec.Command("docker", "rm", "-f", "selenium").Output()

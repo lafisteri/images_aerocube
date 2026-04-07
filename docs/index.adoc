@@ -19,17 +19,11 @@ This section contains information about browser images available for using with 
 
 == Browser Image Information
 include::cdtp.adoc[leveloffset=+1]
-include::cypress.adoc[leveloffset=+1]
-include::playwright.adoc[leveloffset=+1]
 
 === Selenium
 include::android.adoc[leveloffset=+2]
 include::chrome.adoc[leveloffset=+2]
 include::chrome-mobile.adoc[leveloffset=+2]
-include::firefox.adoc[leveloffset=+2]
-include::msedge.adoc[leveloffset=+2]
-include::opera.adoc[leveloffset=+2]
-include::safari.adoc[leveloffset=+2]
 include::windows.adoc[leveloffset=+2]
 
 include::features.adoc[]

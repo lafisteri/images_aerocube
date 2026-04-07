@@ -166,7 +166,7 @@ func TestDevtools(t *testing.T) {
 func TestDetectDevtoolsHost(t *testing.T) {
 	name, _ := os.MkdirTemp("", "devtools")
 	defer os.RemoveAll(name)
-	profilePath := filepath.Join(name, ".org.chromium.Chromium.deadbee")
+	profilePath := filepath.Join(name, ".com.google.Chrome.deadbee")
 	_ = os.MkdirAll(profilePath, os.ModePerm)
 	portFile := filepath.Join(profilePath, "DevToolsActivePort")
 	_ = os.WriteFile(portFile, []byte("12345\n/devtools/browser/6f37c7fe-a0a6-4346-a6e2-80c5da0687f0"), 0644)
