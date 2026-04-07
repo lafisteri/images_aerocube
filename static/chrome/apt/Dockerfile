@@ -11,9 +11,9 @@ RUN \
         echo 'deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main' > /etc/apt/sources.list.d/google.list && \
         apt-get update && \
         CHROME_DEB_VERSION="$VERSION" && \
-        if ! apt-cache madison "$PACKAGE" | awk '{print $3}' | awk -v version="$CHROME_DEB_VERSION" '$0 == version { found = 1 } END { exit !found }'; then \
+        if ! apt-cache madison "$PACKAGE" | awk '{print $3}' | grep -Fxq "$CHROME_DEB_VERSION"; then \
           CHROME_BUILD_VERSION="${VERSION%%-*}" && \
-          CHROME_DEB_VERSION="$(apt-cache madison "$PACKAGE" | awk '{print $3}' | awk -v version_prefix="${CHROME_BUILD_VERSION}-" 'index($0, version_prefix) == 1 { print; exit }')" && \
+          CHROME_DEB_VERSION="$(apt-cache madison "$PACKAGE" | awk '{print $3}' | grep "^${CHROME_BUILD_VERSION}-" | head -n1)" && \
           test -n "$CHROME_DEB_VERSION"; \
         fi && \
         apt-get -y --no-install-recommends install iproute2 "$PACKAGE=$CHROME_DEB_VERSION" && \
