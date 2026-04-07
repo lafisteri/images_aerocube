@@ -21,7 +21,7 @@ var (
 
 	rootCmd = &cobra.Command{
 		Use:           "images",
-		Short:         "images is a tool for building Docker images with browsers",
+		Short:         "images is a tool for building Docker images with Chrome",
 		SilenceUsage:  true,
 		SilenceErrors: true,
 		RunE: func(cmd *cobra.Command, args []string) error {
@@ -51,12 +51,6 @@ func initFlags() {
 func init() {
 	initFlags()
 	rootCmd.AddCommand(chromeCmd)
-	rootCmd.AddCommand(chromiumCmd)
-	rootCmd.AddCommand(edgeCmd)
-	rootCmd.AddCommand(firefoxCmd)
-	rootCmd.AddCommand(operaCmd)
-	rootCmd.AddCommand(yandexCmd)
-	rootCmd.AddCommand(versionCmd)
 }
 
 func Execute() {
