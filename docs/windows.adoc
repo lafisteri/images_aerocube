@@ -1,0 +1,4 @@
+== Windows Browsers
+
+We don't build ready to use images for Internet Explorer and any other browser under Windows because of Windows license limitations. However we provide detailed instructions on building such images https://github.com/aerokube/windows-images[here]. The same approach can be used for preparing images with Chrome under Windows.
+

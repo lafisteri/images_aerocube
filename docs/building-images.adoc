@@ -1,0 +1,42 @@
+== Building Images
+
+=== Chrome
+
+Build Chrome image:
+
+[source,bash]
+----
+$ ./images chrome -b 124.0.6367.207-1 -t selenoid/chrome:124.0
+----
+
+Here `124.0.6367.207-1` is the `google-chrome-stable` package version for Ubuntu, and `selenoid/chrome:124.0` is Docker tag to apply.
+
+Build with a custom Chromedriver version:
+
+[source,bash]
+----
+$ ./images chrome -b 124.0.6367.207-1 -d 124.0.6367.207 -t selenoid/chrome:124.0
+----
+
+To auto-resolve the latest compatible Chromedriver version use `-d latest` or omit `-d`.
+
+Build from local package:
+
+[source,bash]
+----
+$ ./images chrome -b /path/to/google-chrome-stable_current_amd64.deb -t selenoid/chrome:124.0
+----
+
+Run tests:
+
+[source,bash]
+----
+$ ./images chrome -b 124.0.6367.207-1 -t selenoid/chrome:124.0 --test
+----
+
+Push image:
+
+[source,bash]
+----
+$ ./images chrome -b 124.0.6367.207-1 -t selenoid/chrome:124.0 --push
+----
